@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+
+input::-webkit-input-placeholder {
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.55em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  margin-bottom: 2em;
+}
+
+body {
+  background-color: #ece9ff;
+}
+
+main {
+  margin: 0px 10vw;
+}
+
+.name {
+  text-decoration: none;
+  margin-right: 0;
+  color: grey;
+  font-weight: 500;
+}
+
+.log,
+.reg {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.log {
+  color: #0065ff;
+  margin-right: 1em;
+  transition: 0.3s;
+}
+
+.log:hover {
+  color: #6798e2;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.reg {
+  color: #ece9ff;
+  background-color: #0065ff;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #0065ff;
+  transition: 0.3s;
+}
+
+.reg:hover {
+  background-color: #ece9ff;
+  color: #0065ff;
+  transition: 0.3s;
+}
+
+.logo {
+  width: 10em;
+  margin: 1em;
+}
+
+.container {
+  display: flex;
+  margin-bottom: 2em;
+  flex-direction: column;
+}
+
+.container-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #2461bd;
+  transition: 0.3s;
+}
+
+.form-errors {
+  margin: 0.5em;
+  margin-left: 2.5em;
+}
+
+.input-form {
+  width: 80vw;
+  max-width: 500px;
+  height: 80px;
+  margin-bottom: 1.5em;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  box-shadow: 0px 2px 5px lightgrey;
+  padding-left: 14px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 20px;
+}
+
+.container-item {
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  justify-content: center;
+}
+
+.name {
+  text-decoration: none;
+  margin-right: 0;
+  color: grey;
+  font-weight: 500;
+}
+
+a.name:hover {
+  text-decoration: underline;
+  color: #6798e2;
+}
+
+/* Тут пошли стили для boards */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 88.5vh;
+  padding-bottom: 50px;
+}
+
+.boards {
+  display: flex;
+  width: 100%;
+}
+
+.boards__item {
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  max-width: 250px;
+  width: 100%;
+  background-color: rgb(189, 206, 255);
+  margin: 0 15px;
+  padding: 10px;
+  transition: 0.3s all ease;
+  border-radius: 3px;
+}
+
+.add__btn {
+  height: 30px;
+  background: rgba(155, 155, 155, 0.3);
+  border-radius: 3px;
+  display: flex;
+  font-style: 12px;
+  align-items: center;
+  padding-left: 10px;
+  color: black;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 0.2em;
+  border: none;
+  transition: 0.3s;
+}
+
+.add__btn:hover {
+  transition: 0.3s;
+  background: rgba(155, 155, 155, 0.651);
+}
+
+.add__btn span {
+  font-size: 20px;
+  margin-right: 10px;
+  color: black;
+}
+
+.button {
+  transition: 0.3s;
+  padding: 1em;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5aac44;
+  border: none;
+  cursor: pointer;
+  width: 170px;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0 15px;
+}
+
+.add__board {
+  display: flex;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.add__board-input {
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+  min-height: 35px;
+  margin-right: 10px;
+}
+
+.add__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  margin-top: 0.2em;
+  min-height: 20px;
+}
+
+/* .menuDescription {
+  margin-bottom: 2em;
+  line-height: 1.5em;
+}
+
+.menuDescription textarea {
+  width: 100%;
+  height: 5em;
+  padding: 0.5em;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid rgba(92, 87, 87, 0.45);
+  border-radius: 5px;
+} */
+
+.menuTitle {
+  font-weight: bold;
+  font-size: 1.5em;
+
+  background: none;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.popUpArea:focus,
+.menuTitle:focus,
+.popUpDate:focus {
+  background-color: white;
+  outline: 1px solid rgba(92, 87, 87, 0.45);
+  color: black;
+}
+
+.popUpArea {
+  margin-bottom: 1em;
+  line-height: 1.5em;
+
+  color: rgb(87, 85, 85);
+  width: 100%;
+  height: 5em;
+  padding: 0.5em;
+  font-size: 1.1em;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+
+  background: none;
+}
+
+.photoPopUp {
+  max-width: 300px;
+  max-height: 300px;
+  display: block;
+  border-radius: 5px;
+}
+
+.photoDiv {
+  margin-bottom: 1em;
+}
+
+.popUpBtns {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.popUpDate,
+.popUpFile {
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.popUpDate {
+  height: 30px;
+  border: 1px solid rgba(92, 87, 87, 0.45);
+  padding-left: 7px;
+  display: block;
+}
+
+.btn-cancel,
+.btn-save {
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #5aac44;
+  margin-right: 0.5em;
+  transition: 0.3s;
+}
+
+.btn-cancel {
+  transition: 0.3s;
+  background-color: #ca2c2c;
+}
+
+.btn-cancel:hover {
+  transition: 0.3s;
+  background-color: #8d1b1b;
+}
+
+.btn-save:hover {
+  background-color: #42a826;
+  transition: 0.3s;
+}
+
+.list__item {
+  background-color: #fefefe;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+  margin: 0.5em 0;
+  cursor: pointer;
+  font-size: 14px;
+  outline: auto;
+  border: none;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.list__item button {
+  visibility: hidden;
+  height: max-content;
+  color: black;
+  background: none;
+  border: none;
+  padding: 0.3em;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+.list__item:hover button {
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.list__item button:hover {
+  background-color: rgba(116, 116, 116, 0.384);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.title {
+  background: none;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.title:focus {
+  outline: 1px solid rgba(92, 87, 87, 0.45);
+}
+
+.titleDiv {
+  position: relative;
+  transition: 0.3s;
+}
+
+.titleDiv button {
+  width: 1.2rem;
+
+  visibility: hidden;
+  height: max-content;
+  color: black;
+  background: none;
+  border: none;
+  padding: 0.3em;
+  position: absolute;
+  top: 5%;
+  right: 0;
+  margin-right: 5px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.titleDiv:hover button {
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.titleDiv button:hover {
+  background-color: rgba(116, 116, 116, 0.384);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menuContainer {
+  display: flex;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  top: 0;
+  left: 0;
+  background-color: rgb(235, 235, 235);
+  width: 500px;
+  min-height: 300px;
+  margin: auto;
+  padding: 1.2em;
+  border-radius: 4px;
+}
+
+.pk,
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}

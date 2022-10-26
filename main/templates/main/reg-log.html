@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ titlePage }}</title>
+    <link rel="stylesheet" href="{% static 'main/css/stylesBase.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'main/images/icon.ico' %}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-item">
+        <a href="{% url 'home' %}">
+          <img
+            src="{% static 'main/images/logo.png' %}"
+            alt="logo"
+            class="logo"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="sect">
+        <div class="container">
+          <div class="container-item">
+            <h3>{{titleCard}}</h3>
+          </div>
+
+          {% block content %} {% endblock %}
+
+          
+          <div class="container-item">
+            <a class="arch" href="../{{url_anotherLink}}">{{anotherLink}}</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

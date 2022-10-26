@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trello</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'main/images/icon.ico' %}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-item">
+        <a href="{% url 'home' %}">
+          <img
+            src="{% static 'main/images/logo.png' %}"
+            alt="logo"
+            class="logo"
+          />
+        </a>
+      </div>
+
+      <div class="header-item">
+
+        {% if request.user.is_authenticated %} <a class="name" href="{% url 'main' %}">{{ user.username }}</a> | <a class="log" href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+        <a class="log" href="{% url 'login' %}">Войти</a>
+        <a class="reg" href="{% url 'register' %}">Регистрация</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container">
+          <div class="container-item text">
+            <h1>Trello помогает командам эффективно решать рабочие задачи.</h1>
+            <p>
+              Работайте в команде, управляйте проектами и выводите
+              продуктивность на новый уровень собственным уникальным способом
+              вместе с Trello.
+            </p>
+          </div>
+          <div class="container-item">
+            <img
+              src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/hero/6a3ccd8e5c9a0e8ebea4235d12da6b24/hero.png"
+              alt="img1"
+              class="side-img"
+            />
+          </div>
+        </div>
+        <div class="container">
+          {% if request.user.is_authenticated %}
+          <a href="{% url 'main' %}" class="button">
+            Попробовать бесплатно!
+          </a>
+        {% else %}
+        <a href="{% url 'register' %}" class="button">
+          Попробовать бесплатно!
+        </a>
+        {% endif %}
+        </div>
+      </section>
+
+      <section>
+        <div class="container column">
+          <div class="conatiner-item text">
+            <h2>Это не просто работа. Это координация действий в команде.</h2>
+            <p>
+              Начните с досок, колонок и карточек, а затем переходите к более
+              сложным функциям. Управляйте проектами, упорядочивайте задачи и
+              поддерживайте командный дух — все это в Trello.
+            </p>
+          </div>
+
+          <div class="container-item">
+            <img
+              src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/product/89d378b845766a8f0c48e955336266f8/board.png"
+              alt="img2"
+              class="full-width"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="conatiner-item text">
+            <h2>Функции для эффективной командной работы.</h2>
+            <p>
+              Продуктивность команды зависит от эффективных инструментов и
+              комфортной рабочей обстановки. Интуитивно понятные функции Trello
+              позволяют команде быстро настроить рабочие процессы для любых
+              задач: от совещаний и проектов до мероприятий и постановки целей.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="container-item card">
+            <img
+              src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/features/5f90e4a913ac52092f2ac7ff308c45c4/view.svg"
+              alt="card1"
+              class="side-img"
+            />
+          </div>
+          <div class="container-item text">
+            <h2>Доска — это только начало</h2>
+            <p>
+              Колонки и карточки — это фундамент работы на досках Trello. Вы
+              также можете назначать задачи, назначать и отменять дату
+              выполнения.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="container-item card text">
+            <h2>На карточках есть всё что нужно</h2>
+            <p>
+              Карточки Trello помогут эффективно организовывать работу:
+              отслеживайте задачи, а также управляйте ими и делитесь информацией
+              с участниками команды. Чтобы увидеть все доступные функции —
+              списки задач, даты выполнения, вложения откройте любую карточку.
+            </p>
+          </div>
+          <div class="container-item">
+            <img
+              src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/features/b845022d8d738ba8fa5e8b293e434149/card-back.svg"
+              alt="card2"
+              class="side-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container column last">
+          <div class="container-item">
+            <h2>
+              Зарегистрируйтесь и начните работать с Trello уже сегодня. Мы
+              поможем сделать командную работу продуктивной!
+            </h2>
+          </div>
+          <div class="container last">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'main' %}" class="button">Регистрация</a>
+          </div>
+        {% else %}
+        <a href="{% url 'register' %}" class="button">Регистрация</a>
+          </div>
+        {% endif %}
+
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

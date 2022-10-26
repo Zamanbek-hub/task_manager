@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ board }}</title>
+  <link rel="stylesheet" href="{% static 'main/css/stylesBoards.css' %}" />
+  <link
+      rel="shortcut icon"
+      href="{% static 'main/images/icon.ico' %}"
+      type="image/x-icon"
+    />
+</head>
+<body>
+  <header>
+    <div class="header-item">
+      <a href="{% url 'home' %}">
+        <img
+          src="{% static 'main/images/logo.png' %}"
+          alt="logo"
+          class="logo"
+        />
+      </a>
+    </div>
+
+    <div class="header-item">
+
+      {% if request.user.is_authenticated %} <a class="name" href="{% url 'main' %}">{{ user.username }}</a> | <a class="log" href="{% url 'logout' %}">Выйти</a>
+      {% else %}
+      <a class="log" href="{% url 'login' %}">Войти</a>
+      <a class="reg" href="{% url 'register' %}">Регистрация</a>
+      {% endif %}
+    </div>
+
+    <!-- <div class="header-item">
+      <a class="name" href="{% url 'main' %}">{{ user.username }}</a> | <a class="log" href="{% url 'logout' %}">Выйти</a>
+    </div> -->
+  </header>
+
+  <div class="app">
+    {% if request.user.is_authenticated %} 
+      <form id="addBrd" class="add__board" method="post">
+        {% csrf_token %}
+        {% for f in formColumn %}
+          {{f}}
+        {% endfor %}
+        <!-- <input placeholder="Введите название ..." class="add__board-input "type="text" id="add__board-input"> -->
+
+        <button type="submit" class="button">Добавить колонку</button>
+      </form>
+    {% endif %}
+    
+    <div class="boards">
+      {% for c in columns %}
+        {% if c.board == board %}
+        <div class="boards__item" id='{{c.pk}}-column'>
+          <form class="titleDiv">
+            {% csrf_token %}
+            <input disabled class="title" value={{c.name}}>
+            <button type="submit" class="deleteBoard">X</button>
+          </form>
+
+          <form class="add__card">
+            {% csrf_token %}
+            {% for f in formCard %}
+              {{f}}
+            {% endfor %}
+            <!-- <input placeholder="Карточка..." class="add__board-input cardInput"> -->
+            <button type="submit" class="add__btn">
+              <span> + </span>
+            </button>
+          </form>
+
+          <div class="list">
+            {% for cd in cards %}
+              {% if cd.column == c %}
+                <div class="list__item" draggable="true" id='{{cd.pk}}-card'>
+                  <p class="desc none"></p>
+                  <div class="cardTitle">{{ cd.name }}</div>
+                  <button class="deleteCard">X</button>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <script>
+    window.csrf_token = '{% csrf_token %}';
+  </script>
+  <script type="application/javascript" src={% static "main/js/board.js" %}></script>
+  </body>
+</html>
